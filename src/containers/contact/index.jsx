@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink,Link } from "react-router-dom";
+import Popup from "reactjs-popup";
 import './style.css';
 import Header from '../../components/header/index.jsx';
 import Footer from '../../components/footer/index.jsx';
@@ -39,6 +40,9 @@ this.state = {
     if (this.validateForm()) {
       console.log('Form data:')
       console.log(this.state.fields)
+alert('Welcome ' + this.state.fields.name);
+
+
       this.props.history.push('/home');
     }
   }
@@ -78,6 +82,8 @@ this.state = {
 
   render() {
     return (
+      
+
     	<div class="home-main">
     	  <Header></Header>
       <div className="form-blk">
@@ -108,6 +114,13 @@ this.state = {
                             </div>
                           </form>
                         </div>
+
+
+
+  <div class="popup-modal"><Popup trigger={<button> Clieck here</button>} position="right center">
+    <div>xx</div>
+  </Popup></div>
+
         <Footer></Footer>
         </div>
     )
